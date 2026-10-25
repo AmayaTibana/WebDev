@@ -2,15 +2,15 @@
    North Star Bakery - Main Stylesheet
    Touchstone 3 - Carlos Amaya
 
-   Color palette (4 colors):
-     Cream     #FFF8F0  - page background, light text on dark areas
-     Brown     #6B3E26  - headings, links, buttons, header border
-     Peach     #D88C5A  - accents only (borders, hover, focus)
-     Charcoal  #2F2A26  - body text and footer background
+   Color palette "North Star Night" (4 colors):
+     Navy   #1F3A5F  - the night sky: headings, links, buttons, header border
+     Gold   #E3B448  - the star: accents only (borders, hover, focus)
+     Ivory  #FBF7EF  - flour: page background, light text on dark areas
+     Ink    #22252B  - body text and footer background
 
    Fonts (2 families):
-     Lora       - headings (warm, classic serif)
-     Open Sans  - body text, nav, and forms (clean and easy to read)
+     Playfair Display - headings (elegant, like a bakery shop sign)
+     Nunito           - body text, nav, and forms (round, friendly, easy to read)
 
    Approach: mobile-first. The base styles are for small
    screens. The media query at the bottom changes the layout
@@ -19,10 +19,10 @@
 
 /* ---------- Color and spacing variables ---------- */
 :root {
-  --cream: #FFF8F0;
-  --brown: #6B3E26;
-  --peach: #D88C5A;
-  --charcoal: #2F2A26;
+  --ivory: #FBF7EF;
+  --navy: #1F3A5F;
+  --gold: #E3B448;
+  --ink: #22252B;
 
   --space-sm: 0.5rem;
   --space-md: 1rem;
@@ -37,9 +37,9 @@
 
 body {
   margin: 0;
-  background-color: var(--cream);
-  color: var(--charcoal);
-  font-family: "Open Sans", Arial, sans-serif;
+  background-color: var(--ivory);
+  color: var(--ink);
+  font-family: "Nunito", Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -59,8 +59,8 @@ audio {
 h1,
 h2,
 h3 {
-  font-family: "Lora", Georgia, serif;
-  color: var(--brown);
+  font-family: "Playfair Display", Georgia, serif;
+  color: var(--navy);
   line-height: 1.2;
   margin-top: 0;
 }
@@ -89,15 +89,15 @@ p {
 }
 
 a {
-  color: var(--brown);
+  color: var(--navy);
   font-weight: 600;
-  text-decoration-color: var(--peach);
+  text-decoration-color: var(--gold);
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
 }
 
 a:hover {
-  text-decoration-color: var(--brown);
+  text-decoration-color: var(--navy);
 }
 
 /* Visible keyboard focus on every interactive element */
@@ -106,7 +106,7 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid var(--peach);
+  outline: 3px solid var(--gold);
   outline-offset: 2px;
 }
 
@@ -117,13 +117,13 @@ textarea:focus-visible {
   align-items: center;
   gap: var(--space-sm);
   padding: var(--space-md);
-  border-bottom: 4px solid var(--brown);
+  border-bottom: 4px solid var(--navy);
 }
 
 .logo {
   width: 120px;
   /* The logo has a white background. "multiply" blends the
-     white into the cream so there is no white box around it. */
+     white into the ivory background so there is no white box around it. */
   mix-blend-mode: multiply;
 }
 
@@ -143,18 +143,18 @@ textarea:focus-visible {
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--radius);
   text-decoration: none;
-  color: var(--brown);
+  color: var(--navy);
 }
 
 .nav-list a:hover {
-  background-color: var(--peach);
-  color: var(--charcoal);
+  background-color: var(--gold);
+  color: var(--ink);
 }
 
 /* Highlights the page the visitor is on */
 .nav-list a[aria-current="page"] {
-  background-color: var(--brown);
-  color: var(--cream);
+  background-color: var(--navy);
+  color: var(--ivory);
 }
 
 /* ---------- Main layout ---------- */
@@ -187,8 +187,8 @@ section {
   flex: 1;
   margin-bottom: 0;
   padding: var(--space-md);
-  border: 1px solid var(--peach);
-  border-top: 6px solid var(--brown);
+  border: 1px solid var(--gold);
+  border-top: 6px solid var(--navy);
   border-radius: var(--radius);
 }
 
@@ -225,16 +225,16 @@ figcaption {
   font-size: 0.95rem;
   margin-top: var(--space-sm);
   padding-left: var(--space-sm);
-  border-left: 4px solid var(--peach);
+  border-left: 4px solid var(--gold);
 }
 
 /* ---------- Buttons ---------- */
 .button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: var(--brown);
-  color: var(--cream);
-  font-family: "Open Sans", Arial, sans-serif;
+  background-color: var(--navy);
+  color: var(--ivory);
+  font-family: "Nunito", Arial, sans-serif;
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
@@ -244,8 +244,8 @@ figcaption {
 }
 
 .button:hover {
-  background-color: var(--peach);
-  color: var(--charcoal);
+  background-color: var(--gold);
+  color: var(--ink);
 }
 
 /* ---------- Lists (menu, staff, hours) ---------- */
@@ -258,7 +258,7 @@ figcaption {
 
 .menu-list li {
   padding: var(--space-sm) 0;
-  border-bottom: 1px dashed var(--peach);
+  border-bottom: 1px dashed var(--gold);
 }
 
 .menu-list li:last-child {
@@ -268,7 +268,7 @@ figcaption {
 /* Product or staff name sits on its own line */
 .menu-list strong {
   display: block;
-  color: var(--brown);
+  color: var(--navy);
 }
 
 .price {
@@ -281,7 +281,7 @@ figcaption {
   justify-content: space-between;
   gap: var(--space-md);
   padding: var(--space-sm) 0;
-  border-bottom: 1px dashed var(--peach);
+  border-bottom: 1px dashed var(--gold);
 }
 
 .hours-list span:last-child {
@@ -310,16 +310,16 @@ address {
 }
 
 fieldset {
-  border: 1px solid var(--peach);
+  border: 1px solid var(--gold);
   border-radius: var(--radius);
   padding: var(--space-md);
   margin: 0 0 var(--space-md) 0;
 }
 
 legend {
-  font-family: "Lora", Georgia, serif;
+  font-family: "Playfair Display", Georgia, serif;
   font-weight: 600;
-  color: var(--brown);
+  color: var(--navy);
   padding: 0 var(--space-sm);
 }
 
@@ -338,11 +338,11 @@ select,
 textarea {
   width: 100%;
   padding: 0.6rem;
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: "Nunito", Arial, sans-serif;
   font-size: 1rem;
-  color: var(--charcoal);
-  background-color: var(--cream);
-  border: 2px solid var(--brown);
+  color: var(--ink);
+  background-color: var(--ivory);
+  border: 2px solid var(--navy);
   border-radius: var(--radius);
 }
 
@@ -352,8 +352,8 @@ textarea {
 
 /* ---------- Footer ---------- */
 .site-footer {
-  background-color: var(--charcoal);
-  color: var(--cream);
+  background-color: var(--ink);
+  color: var(--ivory);
   text-align: center;
   padding: var(--space-md);
 }

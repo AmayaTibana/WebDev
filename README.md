@@ -18,19 +18,19 @@ This started as my Touchstone Task 2 (HTML structure) and was updated for Touchs
 
 ## Touchstone 3: Design System
 
-**Colors (4)**
+**Colors (4) - "North Star Night"**
 
 | Color | Hex | Used for |
 | --- | --- | --- |
-| Cream | `#FFF8F0` | Page background, text on dark areas |
-| Brown | `#6B3E26` | Headings, links, buttons, header border, current page in the nav |
-| Peach | `#D88C5A` | Accents only: card borders, dividers, hover, keyboard focus |
-| Charcoal | `#2F2A26` | Body text and footer background |
+| Navy | `#1F3A5F` | The night sky: headings, links, buttons, header border, current page in the nav |
+| Gold | `#E3B448` | The star: accents only (card borders, dividers, link underlines, hover, keyboard focus) |
+| Ivory | `#FBF7EF` | Page background, text on dark areas |
+| Ink | `#22252B` | Body text and footer background |
 
 **Fonts (2)**
 
-- **Lora** for headings (h1, h2, h3, and form legends)
-- **Open Sans** for body text, navigation, and form fields
+- **Playfair Display** for headings (h1, h2, h3, and form legends)
+- **Nunito** for body text, navigation, and form fields
 
 **Responsive layout**
 
