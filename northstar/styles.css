@@ -1,0 +1,443 @@
+/* =========================================================
+   North Star Bakery - Main Stylesheet
+   Touchstone 3 - Carlos Amaya
+
+   Color palette (4 colors):
+     Cream     #FFF8F0  - page background, light text on dark areas
+     Brown     #6B3E26  - headings, links, buttons, header border
+     Peach     #D88C5A  - accents only (borders, hover, focus)
+     Charcoal  #2F2A26  - body text and footer background
+
+   Fonts (2 families):
+     Lora       - headings (warm, classic serif)
+     Open Sans  - body text, nav, and forms (clean and easy to read)
+
+   Approach: mobile-first. The base styles are for small
+   screens. The media query at the bottom changes the layout
+   for screens 768px and wider.
+   ========================================================= */
+
+/* ---------- Color and spacing variables ---------- */
+:root {
+  --cream: #FFF8F0;
+  --brown: #6B3E26;
+  --peach: #D88C5A;
+  --charcoal: #2F2A26;
+
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --radius: 8px;
+}
+
+/* ---------- Base styles ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cream);
+  color: var(--charcoal);
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+audio {
+  width: 100%;
+}
+
+/* ---------- Typography ---------- */
+h1,
+h2,
+h3 {
+  font-family: "Lora", Georgia, serif;
+  color: var(--brown);
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+}
+
+a {
+  color: var(--brown);
+  font-weight: 600;
+  text-decoration-color: var(--peach);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-color: var(--brown);
+}
+
+/* Visible keyboard focus on every interactive element */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--peach);
+  outline-offset: 2px;
+}
+
+/* ---------- Header and navigation ---------- */
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border-bottom: 4px solid var(--brown);
+}
+
+.logo {
+  width: 120px;
+  /* The logo has a white background. "multiply" blends the
+     white into the cream so there is no white box around it. */
+  mix-blend-mode: multiply;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.nav-list a {
+  display: block;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--brown);
+}
+
+.nav-list a:hover {
+  background-color: var(--peach);
+  color: var(--charcoal);
+}
+
+/* Highlights the page the visitor is on */
+.nav-list a[aria-current="page"] {
+  background-color: var(--brown);
+  color: var(--cream);
+}
+
+/* ---------- Main layout ---------- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+}
+
+section {
+  margin-bottom: var(--space-lg);
+}
+
+.intro {
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Cards stack on top of each other on small screens */
+.card-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.card {
+  flex: 1;
+  margin-bottom: 0;
+  padding: var(--space-md);
+  border: 1px solid var(--peach);
+  border-top: 6px solid var(--brown);
+  border-radius: var(--radius);
+}
+
+/* Image + text blocks (Products and About pages) */
+.split {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.split img {
+  border-radius: var(--radius);
+}
+
+/* Featured item and video */
+.feature-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.feature img,
+.feature video {
+  border-radius: var(--radius);
+  width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-top: var(--space-sm);
+  padding-left: var(--space-sm);
+  border-left: 4px solid var(--peach);
+}
+
+/* ---------- Buttons ---------- */
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--brown);
+  color: var(--cream);
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--peach);
+  color: var(--charcoal);
+}
+
+/* ---------- Lists (menu, staff, hours) ---------- */
+.menu-list,
+.hours-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-list li {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px dashed var(--peach);
+}
+
+.menu-list li:last-child {
+  border-bottom: none;
+}
+
+/* Product or staff name sits on its own line */
+.menu-list strong {
+  display: block;
+  color: var(--brown);
+}
+
+.price {
+  display: block;
+  font-weight: 600;
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px dashed var(--peach);
+}
+
+.hours-list span:last-child {
+  text-align: right;
+}
+
+.hours-list li:last-child {
+  border-bottom: none;
+}
+
+address {
+  font-style: normal;
+}
+
+/* ---------- Contact form ---------- */
+.contact-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+fieldset {
+  border: 1px solid var(--peach);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  margin: 0 0 var(--space-md) 0;
+}
+
+legend {
+  font-family: "Lora", Georgia, serif;
+  font-weight: 600;
+  color: var(--brown);
+  padding: 0 var(--space-sm);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 1rem;
+  color: var(--charcoal);
+  background-color: var(--cream);
+  border: 2px solid var(--brown);
+  border-radius: var(--radius);
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background-color: var(--charcoal);
+  color: var(--cream);
+  text-align: center;
+  padding: var(--space-md);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* =========================================================
+   Larger screens (tablets and desktops)
+   ========================================================= */
+@media (min-width: 768px) {
+  /* Logo on the left, navigation on the right */
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .logo {
+    width: 140px;
+  }
+
+  /* Navigation links go side by side */
+  .nav-list {
+    flex-direction: row;
+    justify-content: flex-end;
+    width: auto;
+  }
+
+  h1 {
+    font-size: 2.75rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  main {
+    padding: var(--space-lg);
+  }
+
+  /* Cards sit next to each other in a row */
+  .card-row {
+    flex-direction: row;
+    gap: var(--space-lg);
+  }
+
+  .card {
+    padding: var(--space-lg);
+  }
+
+  /* Image on one side, text on the other */
+  .split {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  .split > * {
+    flex: 1;
+  }
+
+  /* About page: Signature Loaf section flips sides */
+  .split.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .feature-text {
+    max-width: 700px;
+  }
+
+  /* Contact page: form on the left, info on the right */
+  .contact-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-lg);
+  }
+
+  .form-card {
+    flex: 2;
+  }
+
+  .contact-info {
+    flex: 1;
+  }
+}

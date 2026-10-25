@@ -4,12 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | North Star Bakery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <img src="bakery-logo.png" alt="North Star Bakery logo, a brown loaf of bread with a wheat stalk inside" width="200">
+  <header class="site-header">
+    <a href="index.html" class="logo-link">
+      <img src="bakery-logo.png" alt="North Star Bakery logo, a brown loaf of bread with a wheat stalk inside" class="logo" width="200">
+    </a>
     <nav aria-label="Main navigation">
-      <ul>
+      <ul class="nav-list">
         <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="products.html">Our Products</a></li>
         <li><a href="about.html">About Our Bakery</a></li>
@@ -19,41 +25,51 @@
   </header>
 
   <main>
-    <h1>Welcome to North Star Bakery</h1>
-    <p>We are a small neighborhood bakery that bakes everything by hand, every morning. Whether you are grabbing a croissant on your way to work, picking up bread for your family, or planning an event, we are happy to have you here.</p>
-
-    <section>
-      <h2>A Message From Our Bakers</h2>
-      <audio controls>
-        <source src="bakery-welcome.mp3" type="audio/mpeg">
-        Your browser does not support the audio element. In this welcome message, our bakers say hello, invite you to visit the shop, and remind you that pre-orders can be placed on our contact page.
-      </audio>
+    <section class="intro">
+      <h1>Welcome to North Star Bakery</h1>
+      <p>We are a small neighborhood bakery that bakes everything by hand, every morning. Whether you are grabbing a croissant on your way to work, picking up bread for your family, or planning an event, we are happy to have you here.</p>
+      <p><a href="contact.html" class="button">Send a Pre-Order Request</a></p>
     </section>
 
-    <section>
-      <h2>What We're Known For</h2>
-      <p>Our neighbors know us for slow-fermented sourdough, flaky pastries, and cookies baked fresh in small batches. We use simple ingredients and take our time, so every loaf tastes the way homemade bread should.</p>
-    </section>
-
-    <section>
+    <section class="feature">
       <h2>Featured Item of the Week</h2>
-      <picture>
-        <source media="(min-width: 800px)" srcset="bakery-feature-large.jpg">
-        <img src="bakery-feature-small.jpg" alt="Display case filled with fresh chocolate chip cookies, iced cookies, and sugar-topped sandwich cookies" width="600">
-      </picture>
-      <p>This week we are featuring our Cookie Sampler: a box of a dozen mixed cookies, including chocolate chunk, iced butter cookies, and sugar crunch. It is perfect for the office, a family movie night, or a party.</p>
+      <div class="feature-content">
+        <picture>
+          <source media="(min-width: 768px)" srcset="bakery-feature-large.jpg">
+          <img src="bakery-feature-small.jpg" alt="Display case filled with fresh chocolate chip cookies, iced cookies, and sugar-topped sandwich cookies" width="600">
+        </picture>
+        <div class="feature-text">
+          <h3>Cookie Sampler</h3>
+          <p>A box of a dozen mixed cookies, including chocolate chunk, iced butter cookies, and sugar crunch. It is perfect for the office, a family movie night, or a party.</p>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>Hours and Location</h2>
-      <p>North Star Bakery<br>
-      123 Main Street, Hometown, NJ 07000</p>
-      <p>Open Tuesday to Saturday, 7:00 AM to 6:00 PM, and Sunday, 8:00 AM to 3:00 PM. Closed Mondays.</p>
-      <p><a href="contact.html">See full hours and send us a pre-order request</a></p>
-    </section>
+    <div class="card-row">
+      <section class="card">
+        <h2>What We're Known For</h2>
+        <p>Our neighbors know us for slow-fermented sourdough, flaky pastries, and cookies baked fresh in small batches. We use simple ingredients and take our time, so every loaf tastes the way homemade bread should.</p>
+      </section>
+
+      <section class="card">
+        <h2>A Message From Our Bakers</h2>
+        <audio controls>
+          <source src="bakery-welcome.mp3" type="audio/mpeg">
+          Your browser does not support the audio element. In this welcome message, our bakers say hello, invite you to visit the shop, and remind you that pre-orders can be placed on our contact page.
+        </audio>
+      </section>
+
+      <section class="card">
+        <h2>Hours and Location</h2>
+        <p>North Star Bakery<br>
+        123 Main Street, Hometown, NJ 07000</p>
+        <p>Open Tuesday to Saturday, 7:00 AM to 6:00 PM, and Sunday, 8:00 AM to 3:00 PM. Closed Mondays.</p>
+        <p><a href="contact.html">See full hours and send us a pre-order request</a></p>
+      </section>
+    </div>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <p>&copy; 2026 North Star Bakery. Baked by hand, made for the neighborhood.</p>
   </footer>
 </body>
